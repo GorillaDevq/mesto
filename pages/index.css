@@ -1,0 +1,36 @@
+/*Подключаем normalize*/
+@import url(../vendor/normalize.css);
+
+/*Подключаем fonts*/
+@import url(../vendor/fonts/fonts.css);
+
+/*Подключаем wrapper*/
+@import url(../blocks/wrapper/wrapper.css);
+
+/*Подключаем root*/
+@import url(../blocks/root/root.css);
+
+/*Подключаем header*/
+@import url(../blocks/header/header.css);
+@import url(../blocks/header/__logo/header__logo.css);
+
+/*Подключаем content*/
+@import url(../blocks/content/content.css);
+
+/*Подключаем profile*/
+@import url(../blocks/profile/profile.css);
+@import url(../blocks/profile/__info/profile__info.css);
+@import url(../blocks/profile/__user/profile__user.css);
+@import url(../blocks/profile/__avatar/profile__avatar.css);
+@import url(../blocks/profile/__name/profile__name.css);
+@import url(../blocks/profile/__description/profile__description.css);
+
+/*Подключаем button*/
+@import url(../blocks/button/button.css);
+@import url(../blocks/button/__edit/button__edit.css);
+@import url(../blocks/button/__add/button__add.css);
+
+/*Подключаем popup*/
+@import url(../blocks/popup/popup.css);
+@import url(../blocks/popup/_hidden/popup_hidden.css);
+@import url(../blocks/popup/__container/popup__container.css);

@@ -1,0 +1,7 @@
+.button__edit {
+  height: 25px;
+  width: 25px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
