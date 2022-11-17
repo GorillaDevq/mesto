@@ -15,16 +15,14 @@ openPopup.addEventListener('click', function (){
 });
 closePopup.addEventListener('click', close);
 // Submit popap
-let submitPopup = document.querySelector('.popup__submit');
+let formSubmit = document.querySelector('.popup__form');
 let nameUser = document.querySelector('.profile__name');
 let nameUserInput = document.querySelector('.popup__input_type_name');
 
-submitPopup.addEventListener('click', function (evt){
+formSubmit.addEventListener('submit', function (evt){
   evt.preventDefault();
-  if (nameUserInput.value === '' || professionUserInput.value === ''){
-  } else {
-    nameUser.textContent = nameUserInput.value;
-    professionUser.textContent = professionUserInput.value;
-    close();
-  };
+  nameUser.textContent = nameUserInput.value;
+  professionUser.textContent = professionUserInput.value;
+  close();
 });
+
