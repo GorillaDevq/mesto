@@ -24,7 +24,7 @@
 
 ### Ссылка на GitPages
 
-- GITpages URL: [https://zhdko.github.io/Where_i_will_go/](https://zhdko.github.io/Where_i_will_go/)
+- GITpages URL: [https://gorilladevq.github.io/mesto/](https://gorilladevq.github.io/mesto/)
 
 ## Мой процесс
 
