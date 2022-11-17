@@ -1,7 +1,7 @@
 .button {
   border-radius: 2px;
   background-color: black;
-  border: 2px solid white;
+  border: 1px solid white;
   cursor: pointer;
   padding: 0;
 }
