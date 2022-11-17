@@ -27,8 +27,8 @@
 
 /*Подключаем button*/
 @import url(../blocks/button/button.css);
-@import url(../blocks/button/__edit/button__edit.css);
-@import url(../blocks/button/__add/button__add.css);
+@import url(../blocks/button/_type/button_type_edit.css);
+@import url(../blocks/button/_type/button_type_add.css);
 
 /*Подключаем elements*/
 @import url(../blocks/elements/elements.css);
