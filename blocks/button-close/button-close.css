@@ -1,4 +1,4 @@
-.popup__close {
+.button-close {
   background-color: rgba(0, 0, 0, 0);
   padding: 0;
   cursor: pointer;
@@ -11,7 +11,7 @@
 }
 
 @media screen and (max-width: 768px) {
-  .popup__close {
+  .button-close {
     right: 0;
     top: -35px;
     width: 20px;

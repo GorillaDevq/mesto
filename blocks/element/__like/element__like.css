@@ -12,7 +12,7 @@
   color: black;
 }
 
-.element__like:active{
+.element__like_active{
   opacity: 1;
   background-image: url(../../../images/like/heart_active.svg);
 }
