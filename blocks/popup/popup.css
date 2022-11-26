@@ -1,5 +1,9 @@
 .popup {
-  display: none;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  visibility: hidden;
+  opacity: 0;
   position: fixed;
   top: 0;
   right: 0;
@@ -9,16 +13,5 @@
   height: 100vh;
   background-color: rgba(0, 0, 0, 0.5);
   color: black;
-}
-
-.popup-image {
-  position: fixed;
-  top: 0;
-  right: 0;
-  left: 0;
-  bottom: 0;
-  width: 100vw;
-  height: 100vh;
-  background-color: rgba(0, 0, 0, 0.5);
-  color: black;
+  transition: opacity 0.5s ease-in-out;
 }

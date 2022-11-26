@@ -28,17 +28,16 @@
           <button class="button button_type_add" type="button" aria-label="add"><img class="button__image-add" src="./images/button/plus.svg" alt="плюс"></button>
         </section>
         <section class="elements">
-
         </section>
       </main>
       <footer class="footer">
         <p class="footer__copyright" lang="en">&copy; 2022 Mesto Russia</p>
       </footer>
-      <section class="popup"><!--Попап-->
+      <section class="popup popup_type_edit"><!--Попап редакции-->
         <div class="popup__container">
-          <button class="button-close" type="button"><img class="button-close__image" src="./images/button/Close-Icon.svg" alt="Закрыть"></button>
+          <button class="button-close button-close_type_edit" type="button"><img class="button-close__image" src="./images/button/Close-Icon.svg" alt="Закрыть"></button>
           <h2 class="popup__heading">Редактировать профиль</h2>
-          <form action="submit" class="popup__form" name="user">
+          <form action="submit" class="popup__form popup__form_type_edit" name="user">
             <fieldset class="popup__fieldset">
               <input type="text" class="popup__input popup__input_type_name" name="name" required value>
               <input type="text" class="popup__input popup__input_type_profession" name="profession" required value>
@@ -47,9 +46,22 @@
           </form>
         </div>
       </section>
-      <section class="popup-image">
+      <section class="popup popup_type_add"><!--Попап добавления-->
+        <div class="popup__container">
+          <button class="button-close button-close_type_add" type="button"><img class="button-close__image" src="./images/button/Close-Icon.svg" alt="Закрыть"></button>
+          <h2 class="popup__heading">Новое Место</h2>
+          <form action="submit" class="popup__form popup__form_type_add" name="card">
+            <fieldset class="popup__fieldset">
+              <input type="text" class="popup__input popup__input_type_location" name="location" placeholder="Название" required value>
+              <input type="text" class="popup__input popup__input_type_link" name="link" placeholder="Ссылка на картинку" required value>
+            </fieldset>
+            <button class="popup__submit" type="submit">Создать</button>
+          </form>
+        </div>
+      </section>
+      <section class="popup-image"><!--Popup фотографий-->
         <div class="popup-image__container">
-          <button class="button-close" type="button"><img class="button-close__image" src="./images/button/Close-Icon.svg" alt="Закрыть"></button>
+          <button class="button-close button-close_type_image" type="button"><img class="button-close__image" src="./images/button/Close-Icon.svg" alt="Закрыть"></button>
           <img src="" alt="" class="popup-image__image">
           <h2 class="popup-image__heading"></h2>
         </div>
