@@ -1,13 +1,13 @@
-.button-close__image {
+.popup__close-image {
   width: 32px;
   height: 32px;
 }
-.button-close__image:hover{
+.popup__close-image:hover{
   opacity: 0.6;
 }
 
 @media screen and (max-width: 768px) {
-  .button-close__image {
+  .popup__close-image {
     width: 20px;
     height: 20px;
   }
