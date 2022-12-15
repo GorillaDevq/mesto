@@ -7,18 +7,7 @@
   border: none;
   border-bottom: 1px solid rgba(0, 0, 0, 0.2);
   box-sizing: border-box;
+  margin-bottom: 5px;
 }
 
-.popup__input:not(:last-of-type) {
-  margin-bottom: 30px;
-}
 
-.popup__input:last-of-type{
-  margin-bottom: 50px;
-}
-
-@media screen and (max-width: 768px) {
-  .popup__input:last-of-type{
-    margin-bottom: 45px;
-  }
-}

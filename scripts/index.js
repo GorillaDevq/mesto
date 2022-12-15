@@ -1,4 +1,5 @@
 //Глобальные переменные
+const popups = document.querySelectorAll('.popup');
   //Редакция профиля
 const popupEdit = document.querySelector('.popup_type_edit');
 const openPopupEdit = document.querySelector('.button_type_edit');
@@ -53,20 +54,24 @@ const initialCards = [
     alt: 'Байкал'
   }
 ];
-// Функция закытия попапов
+
+
+//Функция закытия попапов
+function closePopup(popup) {
+  popup.classList.remove('popup_opened');
+}
+
 closeButtons.forEach((button) => {
   const popup = button.closest('.popup');
   button.addEventListener('click', () => closePopup(popup));
 });
-function closePopup(popup) {
-  popup.classList.remove('popup_opened');
-}
 
 
 //Функция открытия попапов
 function openPopup(popup) {
   popup.classList.add('popup_opened');
 }
+
 openPopupEdit.addEventListener('click', function (){
   professionUserInput.value = professionUser.textContent;
   nameUserInput.value = nameUser.textContent;
@@ -84,7 +89,10 @@ formSubmitEdit.addEventListener('submit', function (evt){
 
 //Функция открытия попапа добавления
 openPopupAdd.addEventListener('click', function (){
+  const inputList = Array.from(popupAdd.querySelectorAll(selectorObj.inputSelector));
+  const buttonElement = popupAdd.querySelector(selectorObj.submitButtonSelector);
   openPopup(popupAdd);
+  toggleButtonState(inputList, buttonElement, selectorObj);
 });
 
 //Функция субмита попапа добавления
@@ -129,4 +137,19 @@ function createCard(item) {
 initialCards.forEach((item) => {
   const cardElement = createCard(item);
   sectionElement.append(cardElement);
+});
+
+popups.forEach((popup) =>{
+  popup.addEventListener('click', (evt) =>{
+    if (evt.target === evt.currentTarget){
+      closePopup(popup);
+    };
+  });
+});
+
+document.addEventListener('keydown', (evt) =>{
+  const findOpenPopup = document.querySelector('.popup_opened');
+  if (evt.key === 'Escape'){
+    closePopup(findOpenPopup);
+  };
 });
