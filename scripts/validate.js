@@ -1,14 +1,3 @@
-//Объект селекторов
-const selectorObj = {
-  formSelector: '.popup__form',
-  inputSelector: '.popup__input',
-  submitButtonSelector: '.popup__submit',
-  inactiveButtonClass: 'popup__submit_disabled',
-  inputErrorClass: 'popup__input_type_error',
-  errorClass: 'popup__input-error_active',
-  fieldsetSelector: '.popup__fieldset'
-}
-
 
 // Функция показа ошибки
 const showInputError = (formElement, inputElement, errorMessage, selectorObj) => {
@@ -71,13 +60,20 @@ const hasInvalidInput = (inputList) => {
 //Функция изменения состояния кнопки
 const toggleButtonState = (inputList, buttonElement, selectorObj) => {
   if (hasInvalidInput(inputList)) {
-    buttonElement.classList.add(selectorObj.inactiveButtonClass);
-    buttonElement.setAttribute('disabled', true);
+    enableSubmitButton(buttonElement, selectorObj);
   } else {
-    buttonElement.classList.remove(selectorObj.inactiveButtonClass);
-    buttonElement.removeAttribute('disabled');
+    disableSubmitButton(buttonElement, selectorObj);
   }
 }
 
+const enableSubmitButton = (buttonElement, selectorObj) => {
+  buttonElement.classList.add(selectorObj.inactiveButtonClass);
+  buttonElement.setAttribute('disabled', true);
+}
+
+const disableSubmitButton = (buttonElement, selectorObj) => {
+  buttonElement.classList.remove(selectorObj.inactiveButtonClass);
+  buttonElement.removeAttribute('disabled');
+}
 
 enableValidation(selectorObj);
