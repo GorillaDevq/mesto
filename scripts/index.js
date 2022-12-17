@@ -25,11 +25,13 @@ const sectionElement = document.querySelector('.elements');
 //Функция закытия попапов
 function closePopup(popup) {
   popup.classList.remove('popup_opened');
+  document.removeEventListener('keydown', closePopupByEscape);
 }
 
 //Функция открытия попапов
 function openPopup(popup) {
   popup.classList.add('popup_opened');
+  document.addEventListener('keydown', closePopupByEscape);
 }
 
 buttonEditProfile.addEventListener('click', function (){
@@ -48,9 +50,9 @@ formSubmitEdit.addEventListener('submit', function (evt){
 
 //Функция открытия попапа добавления
 buttonAddCard.addEventListener('click', function (){
+  const buttonElement = document.querySelector('.popup__submit_type_add');
   openPopup(popupAdd);
-  enableSubmitButtonAdd(popupAdd);
-  document.addEventListener('keydown', closePopupByEscape);
+  enableSubmitButton(buttonElement, selectorObj);
 });
 
 //Функция субмита попапа добавления
@@ -103,17 +105,10 @@ popupList.forEach((popup) => {
     const targetClassList = event.target.classList;
     if (targetClassList.contains('popup') || targetClassList.contains('popup__close-image')) {
       closePopup(popup);
-      document.removeEventListener('keydown', closePopupByEscape);
     }
   })
 })
 
-//Функция неактивной кнопки
-function enableSubmitButtonAdd (choosePopup) {
-  const buttonElement = choosePopup.querySelector('.popup__submit');
-  buttonElement.classList.add(selectorObj.inactiveButtonClass);
-  buttonElement.setAttribute('disabled', true);
-}
 
 //Функция закрытия через escape
 function closePopupByEscape (evt) {
