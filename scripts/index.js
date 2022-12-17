@@ -50,7 +50,7 @@ formSubmitEdit.addEventListener('submit', function (evt){
 
 //Функция открытия попапа добавления
 buttonAddCard.addEventListener('click', function (){
-  const buttonElement = document.querySelector('.popup__submit_type_add');
+  const buttonElement = popupAdd.querySelector('.popup__submit');
   openPopup(popupAdd);
   enableSubmitButton(buttonElement, selectorObj);
 });
