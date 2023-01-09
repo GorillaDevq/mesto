@@ -79,8 +79,8 @@ formSubmitAdd.addEventListener('submit', function (evt) {
 });
 
 popupList.forEach((popup) => {
-  popup.addEventListener('mouseup', (event) => {
-    const targetClassList = event.target.classList;
+  popup.addEventListener('mouseup', (evt) => {
+    const targetClassList = evt.target.classList;
     if (targetClassList.contains('popup') || targetClassList.contains('popup__close-image')) {
       closePopup(popup);
     }
