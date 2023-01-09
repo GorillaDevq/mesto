@@ -41,7 +41,7 @@ class Card {
     this._element.querySelector(Card.selector.image).src = this._link;
     this._element.querySelector(Card.selector.image).alt = this.alt;
     this._setListeners();
-    return this._element
+    return this._element;
   }
 }
 
