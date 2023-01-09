@@ -41,3 +41,5 @@ const selectorObj = {
   errorClass: 'popup__input-error_active',
   fieldsetSelector: '.popup__fieldset'
 }
+
+export { initialCards, selectorObj }
