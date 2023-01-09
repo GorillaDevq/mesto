@@ -87,9 +87,7 @@ popupList.forEach((popup) => {
   })
 })
 
-initialCards.forEach ((item) => {
-  sectionElement.append(createCard(item.name, item.link, item.alt));
-})
+initialCards.forEach ((item) => { sectionElement.append(createCard(item.name, item.link, item.alt)) })
 
 formElementList.forEach((formElement) => {
   const validator = new FormValidator (selectorObj, formElement);
