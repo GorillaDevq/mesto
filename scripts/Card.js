@@ -23,21 +23,10 @@ class Card {
     this._element.querySelector(Card.selector.trash).closest(Card.selector.element).remove();
   }
 
-  _listenerImage() {
-    openPopup(popupImage);
-    popupImageChoose.src = this._link;
-    popupImageChoose.alt = this._alt;
-    popupLocationChoose.textContent = this._name;
-  }
-
   _setListeners() {
-    this._element.querySelector(Card.selector.like).addEventListener('click', () => {
-      this._listenerLike();
-    })
+    this._element.querySelector(Card.selector.like).addEventListener('click', () => { this._listenerLike() })
 
-    this._element.querySelector(Card.selector.trash).addEventListener('click', () => {
-      this._listenerTrash();
-    })
+    this._element.querySelector(Card.selector.trash).addEventListener('click', () => { this._listenerTrash() })
 
     this._element.querySelector(Card.selector.image).addEventListener('click', () => { this._openPopup(this._link, this._alt, this._name) })
   }
