@@ -20,7 +20,8 @@ class Card {
   }
 
   _listenerTrash() {
-    this._element.querySelector(Card.selector.trash).closest(Card.selector.element).remove();
+    this._element.remove();
+    this._element = null;
   }
 
   _setListeners() {
