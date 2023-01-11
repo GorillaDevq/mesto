@@ -19,18 +19,13 @@ const formSubmitAdd = document.forms["card"];
 const locationInput = document.querySelector('.popup__input_type_location');
 const linkInput = document.querySelector('.popup__input_type_link');
 const sectionElement = document.querySelector('.elements');
-const buttonSubmitAdd = document.querySelector('.popup__submit_type_add');
-const buttonSubmitEdit = document.querySelector('.popup__submit_type_edit');
-const inputListAdd = Array.from(formSubmitAdd.querySelectorAll('.popup__input'));
-const inputListEdit = Array.from(formSubmitEdit.querySelectorAll('.popup__input'));
-const formAddValidator = new FormValidator (selectorObj, formSubmitAdd, buttonSubmitAdd, inputListAdd);
-const formEditValidator = new FormValidator (selectorObj, formSubmitEdit, buttonSubmitEdit, inputListEdit);
+const formAddValidator = new FormValidator (selectorObj, formSubmitAdd);
+const formEditValidator = new FormValidator (selectorObj, formSubmitEdit);
 
 const openPopupImage = (link, alt, name) => {
   popupImageChoose.src = link;
   popupImageChoose.alt = alt;
   popupLocationChoose.textContent = name;
-  popupImage.style.backgroundColor = 'rgba(0, 0, 0, 0.9)';
   openPopup(popupImage);
 }
 
