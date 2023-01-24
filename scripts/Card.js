@@ -1,4 +1,4 @@
-class Card {
+export default class Card {
   static selector =  {
     element: '.element',
     heading: '.element__heading',
@@ -7,12 +7,12 @@ class Card {
     trash: '.element__delete'
   }
 
-  constructor(name, link, alt, templateSelector, openPopup) {
+  constructor(name, link, alt, templateSelector, handleCardClick) {
     this._name = name;
     this._link = link;
     this._alt = alt;
     this._templateSelector = templateSelector;
-    this._openPopup = openPopup;
+    this._handleCardClick = handleCardClick;
   }
 
   _listenerLike() {
@@ -29,7 +29,7 @@ class Card {
 
     this._element.querySelector(Card.selector.trash).addEventListener('click', () => { this._listenerTrash() })
 
-    this._element.querySelector(Card.selector.image).addEventListener('click', () => { this._openPopup(this._link, this._alt, this._name) })
+    this._element.querySelector(Card.selector.image).addEventListener('click', () => { this._handleCardClick(this._link, this._alt, this._name) })
   }
 
   generateCard() {
@@ -45,5 +45,3 @@ class Card {
     return this._element;
   }
 }
-
-export { Card }

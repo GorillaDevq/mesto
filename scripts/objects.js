@@ -40,4 +40,11 @@ const selectorObj = {
   errorClass: 'popup__input-error_active',
 }
 
-export { initialCards, selectorObj }
+const buttonEditProfile = document.querySelector('.button_type_edit');
+const formSubmitEdit = document.forms["user"];
+const popupAdd = document.querySelector('.popup_type_add');
+const buttonAddCard = document.querySelector('.button_type_add');
+const formSubmitAdd = document.forms["card"];
+const sectionElement = document.querySelector('.elements');
+
+export { initialCards, selectorObj, buttonEditProfile, formSubmitEdit, popupAdd, buttonAddCard, formSubmitAdd, sectionElement }
