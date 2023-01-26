@@ -5,11 +5,12 @@ import PopupWithImage from "./PopupWithImage.js";
 import PopupWithForm from "./PopupWithForm.js";
 import UserInfo from "./UserInfo.js";
 import { initialCards, selectorObj, buttonEditProfile, formSubmitEdit, popupAdd, buttonAddCard, formSubmitAdd, sectionElement } from "./objects.js";
+import '../pages/index.css'
 
-const userInfo = new UserInfo('.profile__name', '.profile__profession')
+const userInfo = new UserInfo('.profile__name', '.profile__profession');
 const formAddValidator = new FormValidator (selectorObj, formSubmitAdd);
 const formEditValidator = new FormValidator (selectorObj, formSubmitEdit);
-const popupWithImage = new PopupWithImage('.popup_type_image')
+const popupWithImage = new PopupWithImage('.popup_type_image');
 
 const createCard = (name, link, alt) => {
   const card = new Card(name, link, alt, '#card-element', handleCardClick);

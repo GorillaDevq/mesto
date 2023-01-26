@@ -7,25 +7,24 @@
     <meta name="description" content="Website about places for traveling." />
     <meta name="keywords" content="Место" />
     <meta name="authors" content="Gorilla.dev" />
-    <link rel="stylesheet" href="./pages/index.css" />
     <title>Mesto</title>
   </head>
   <body class="wrapper"><!--Обертка-->
     <div class="root"><!--Страница-->
       <header class="header"><!--Голова-->
-        <img class="header__logo" src="./images/logo/logo.svg" alt="Логотип сайта" />
+        <img class="header__logo" src="<%=require('./images/logo/logo.svg')%>" alt="Логотип сайта" />
       </header>
       <main class="content"><!--Контент-->
         <section class="profile"><!--Профиль-->
-          <img src="./images/avatars/avatar.png" alt="Аватар" class="profile__avatar">
+          <img src="<%=require('./images/avatars/avatar.png')%>" alt="Аватар" class="profile__avatar">
           <div class="profile__info">
             <div class="profile__user">
               <h1 class="profile__name">Жак-Ив Кусто</h1>
-              <button class="button button_type_edit" type="button" aria-label="edit"><img class="button__image-edit" src="./images/button/feather.svg" alt="перо"></button>
+              <button class="button button_type_edit" type="button" aria-label="edit"><img class="button__image-edit" src="<%=require('./images/button/feather.svg')%>" alt="перо"></button>
             </div>
             <p class="profile__profession">Исследователь океана</p>
           </div>
-          <button class="button button_type_add" type="button" aria-label="add"><img class="button__image-add" src="./images/button/plus.svg" alt="плюс"></button>
+          <button class="button button_type_add" type="button" aria-label="add"><img class="button__image-add" src="<%=require('./images/button/plus.svg')%>" alt="плюс"></button>
         </section>
         <section class="elements">
         </section>
@@ -35,7 +34,7 @@
       </footer>
       <section class="popup popup_type_edit"><!--Попап редакции-->
         <div class="popup__container">
-          <button class="popup__button-close popup__button-close_type_edit" type="button"><img class="popup__close-image" src="./images/button/Close-Icon.svg" alt="Закрыть"></button>
+          <button class="popup__button-close popup__button-close_type_edit" type="button"><img class="popup__close-image" src="<%=require('./images/button/Close-Icon.svg')%>" alt="Закрыть"></button>
           <h2 class="popup__heading">Редактировать профиль</h2>
           <form action="submit" class="popup__form popup__form_type_edit" name="user">
             <fieldset class="popup__fieldset">
@@ -50,7 +49,7 @@
       </section>
       <section class="popup popup_type_add"><!--Попап добавления-->
         <div class="popup__container">
-          <button class="popup__button-close popup__button-close_type_add" type="button"><img class="popup__close-image" src="./images/button/Close-Icon.svg" alt="Закрыть"></button>
+          <button class="popup__button-close popup__button-close_type_add" type="button"><img class="popup__close-image" src="<%=require('./images/button/Close-Icon.svg')%>" alt="Закрыть"></button>
           <h2 class="popup__heading">Новое Место</h2>
           <form action="submit" class="popup__form popup__form_type_add" name="card">
             <fieldset class="popup__fieldset">
@@ -65,15 +64,15 @@
       </section>
       <section class="popup popup_type_image"><!--Popup фотографий-->
         <div class="popup__image-container">
-          <button class="popup__button-close popup__button-close_type_image" type="button"><img class="popup__close-image" src="./images/button/Close-Icon.svg" alt="Закрыть"></button>
-          <img src="./images/elements/Домбай.png" alt="Домбай" class="popup__image">
+          <button class="popup__button-close popup__button-close_type_image" type="button"><img class="popup__close-image" src="<%=require('./images/button/Close-Icon.svg')%>" alt="Закрыть"></button>
+          <img src="<%=require('./images/elements/Домбай.png')%>" alt="Домбай" class="popup__image">
           <h2 class="popup__location"></h2>
         </div>
       </section>
       <template id="card-element"><!--Карточка-->
         <div class="element">
           <button class="element__delete" type="button"></button>
-          <img src="./images/elements/Домбай.png" alt="Домбай" class="element__image">
+          <img src="<%=require('./images/elements/Домбай.png')%>" alt="Домбай" class="element__image">
           <div class="element__descriprion">
             <h2 class="element__heading"></h2>
             <button class="element__like" type="button"></button>
@@ -81,6 +80,5 @@
         </div>
       </template>
     </div>
-    <script src="./scripts/index.js" type="module"></script>
   </body>
 </html>
