@@ -42,9 +42,6 @@ const selectorObj = {
 
 const buttonEditProfile = document.querySelector('.button_type_edit');
 const formSubmitEdit = document.forms["user"];
-const popupAdd = document.querySelector('.popup_type_add');
 const buttonAddCard = document.querySelector('.button_type_add');
 const formSubmitAdd = document.forms["card"];
-const sectionElement = document.querySelector('.elements');
-
-export { initialCards, selectorObj, buttonEditProfile, formSubmitEdit, popupAdd, buttonAddCard, formSubmitAdd, sectionElement }
+export { initialCards, selectorObj, buttonEditProfile, formSubmitEdit, buttonAddCard, formSubmitAdd }

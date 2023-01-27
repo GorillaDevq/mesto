@@ -4,7 +4,8 @@ export default class Card {
     heading: '.element__heading',
     image: '.element__image',
     like: '.element__like',
-    trash: '.element__delete'
+    trash: '.element__delete',
+    likeActive: 'element__like_active'
   }
 
   constructor(name, link, alt, templateSelector, handleCardClick) {
@@ -16,7 +17,7 @@ export default class Card {
   }
 
   _listenerLike() {
-    this._element.querySelector(Card.selector.like).classList.toggle('element__like_active');
+    this._element.querySelector(Card.selector.like).classList.toggle(Card.selector.likeActive);
   }
 
   _listenerTrash() {
