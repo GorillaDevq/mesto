@@ -5,7 +5,7 @@ import PopupWithImage from "../components/PopupWithImage.js";
 import PopupWithForm from "../components/PopupWithForm.js";
 import UserInfo from "../components/UserInfo.js";
 import { initialCards, selectorObj, buttonEditProfile, formSubmitEdit, buttonAddCard, formSubmitAdd } from "../utils/constans.js";
-import '../../pages/index.css'
+import './index.css'
 
 const userInfo = new UserInfo({name: '.profile__name', profession: '.profile__profession'});
 const formAddValidator = new FormValidator (selectorObj, formSubmitAdd);
@@ -20,9 +20,11 @@ const createCard = (name, link, alt) => {
 
 const submitFormAdd = data => {
   cardList.addItemPrepend(createCard(data.location, data.link, data.location));
+  popupAddCard.close();
 }
 const submitFormEdit = data => {
-  userInfo.setUserInfo(data)
+  userInfo.setUserInfo(data);
+  popupEditProfile.close();
 }
 const popupAddCard = new PopupWithForm('.popup_type_add', submitFormAdd)
 

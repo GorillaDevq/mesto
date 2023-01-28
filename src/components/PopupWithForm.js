@@ -29,16 +29,10 @@ export default class PopupWithForm extends Popup {
   }
 
   setEventListeners() {
-    this._element.addEventListener('mouseup', (evt) =>{
-      const targetClassList = evt.target.classList;
-      if (targetClassList.contains(Popup.selectors.popup) || targetClassList.contains(Popup.selectors.popupCloseImage)) {
-        this.close();
-      }
-    });
+    super.setEventListeners()
     this._form.addEventListener('submit', (evt) => {
       evt.preventDefault();
       this._submitForm(this._getInputValues())
-      this.close();
     })
   }
 }
