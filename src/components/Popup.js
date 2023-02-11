@@ -27,7 +27,7 @@ export default class Popup {
   }
 
   setEventListeners() {
-    this._element.addEventListener('mouseup', (evt) =>{
+    this._element.addEventListener('mousedown', (evt) =>{
       const targetClassList = evt.target.classList;
       if (targetClassList.contains(Popup.selectors.popup) || targetClassList.contains(Popup.selectors.popupCloseImage)) {
         this.close();

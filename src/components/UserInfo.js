@@ -1,9 +1,8 @@
 export default class UserInfo {
-  constructor({ name, profession, avatar }, { handleAvatarClick }){
+  constructor({ name, profession, avatar }){
     this._name = document.querySelector(name);
     this._profession = document.querySelector(profession);
     this._avatar = document.querySelector(avatar);
-    this._handleAvatarClick = handleAvatarClick;
   }
 
   getUserInfo() {
@@ -14,10 +13,6 @@ export default class UserInfo {
     return this._odject
   }
 
-  setUserId(data) {
-    this._id = data._id
-  }
-
   getUserId() {
     return this._id
   }
@@ -26,13 +21,10 @@ export default class UserInfo {
     this._avatar.src = data.avatar
   }
 
-  setListenerAvatar() {
-    this._avatar.addEventListener('click', () => { this._handleAvatarClick() })
-  }
-
-  setUserInfo(data) {
-    this._name.textContent = data.name;
-    this._profession.textContent = data.about;
-    this._id = data._id
+  setUserInfo({ name, about, avatar, _id }) {
+    this._name.textContent = name;
+    this._profession.textContent = about;
+    this._avatar.src = avatar
+    this._id = _id
   }
 }

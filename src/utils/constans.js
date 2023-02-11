@@ -18,5 +18,7 @@ const buttonEditProfile = document.querySelector('.button_type_edit');
 const formSubmitEdit = document.forms["user"];
 const buttonAddCard = document.querySelector('.button_type_add');
 const formSubmitAdd = document.forms["card"];
-const formSubmitAvatar = document.forms["avatar"]
-export { options, selectorObj, buttonEditProfile, formSubmitEdit, buttonAddCard, formSubmitAdd, formSubmitAvatar }
+const formSubmitAvatar = document.forms["avatar"];
+const avatarListener = document.querySelector('.profile__avatar')
+
+export { options, selectorObj, buttonEditProfile, formSubmitEdit, buttonAddCard, formSubmitAdd, formSubmitAvatar, avatarListener }

@@ -35,26 +35,26 @@ export default class Card {
 
   _checkOwnerId() {
     if (this._userId === this._ownerId) {
-      this._element.querySelector(Card.selector.trash).classList.remove(Card.selector.trashHidden)
+      this._cardTrash.classList.remove(Card.selector.trashHidden)
     } else {
-      this._element.querySelector(Card.selector.trash).classList.add(Card.selector.trashHidden)
+      this._cardTrash.classList.add(Card.selector.trashHidden)
     }
   }
 
   _checkUserLike() {
     if (this.isLike()) {
-      this._element.querySelector(Card.selector.like).classList.add(Card.selector.likeActive);
+      this._cardLike.classList.add(Card.selector.likeActive);
     } else {
-      this._element.querySelector(Card.selector.like).classList.remove(Card.selector.likeActive);
+      this._cardLike.classList.remove(Card.selector.likeActive);
     }
   }
 
   setlikeCounter(data) {
-    this._element.querySelector(Card.selector.likeCounter).textContent = data.likes.length;
+    this._cardLikeCounter.textContent = data.likes.length;
   }
 
-  _listenerLike() {
-    this._element.querySelector(Card.selector.like).classList.toggle(Card.selector.likeActive);
+  toggleLike() {
+    this._cardLike.classList.toggle(Card.selector.likeActive);
   }
 
   isLike() {
@@ -63,14 +63,11 @@ export default class Card {
   })}
 
   _setListeners() {
-    this._element.querySelector(Card.selector.like).addEventListener('click', () => {
-      this._handleLikeCard()
-      this._listenerLike()
+    this._cardLike.addEventListener('click', () => {
+      this._handleLikeCard();
     })
-
-    this._element.querySelector(Card.selector.trash).addEventListener('click', () => { this._handleDeleteCard() })
-
-    this._element.querySelector(Card.selector.image).addEventListener('click', () => { this._handleCardClick(this._data) })
+    this._cardTrash.addEventListener('click', () => { this._handleDeleteCard() })
+    this._cardImage.addEventListener('click', () => { this._handleCardClick(this._data) })
   }
 
   generateCard() {
@@ -79,10 +76,15 @@ export default class Card {
       .content
       .querySelector(Card.selector.element)
       .cloneNode(true);
-    this._element.querySelector(Card.selector.heading).textContent = this._name;
-    this._element.querySelector(Card.selector.image).src = this._link;
-    this._element.querySelector(Card.selector.image).alt = this._name;
-    this._element.querySelector(Card.selector.likeCounter).textContent = this._arrLike.length;
+    this._cardTrash = this._element.querySelector(Card.selector.trash);
+    this._cardLike = this._element.querySelector(Card.selector.like);
+    this._cardLikeCounter = this._element.querySelector(Card.selector.likeCounter);
+    this._cardImage = this._element.querySelector(Card.selector.image);
+    this._cardHeading = this._element.querySelector(Card.selector.heading);
+    this._cardHeading.textContent = this._name;
+    this._cardImage.src = this._link;
+    this._cardImage.alt = this._name;
+    this._cardLikeCounter.textContent = this._arrLike.length;
     this._checkUserLike();
     this._checkOwnerId();
     this._setListeners();
