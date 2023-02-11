@@ -9,6 +9,7 @@ export default class Popup {
     popupLocation: '.popup__location',
     popupInput: '.popup__input',
     popupForm: '.popup__form',
+    popupSubmit: '.popup__submit'
   }
 
   constructor(selector) {
@@ -17,12 +18,12 @@ export default class Popup {
 
   open() {
     this._element.classList.add(Popup.selectors.popupActive);
-    document.addEventListener('keydown', this._handleEscClose)
+    document.addEventListener('keydown', this._handleEscClose);
   }
 
   close() {
     this._element.classList.remove(Popup.selectors.popupActive);
-    document.removeEventListener('keydown', this._handleEscClose)
+    document.removeEventListener('keydown', this._handleEscClose);
   }
 
   setEventListeners() {
