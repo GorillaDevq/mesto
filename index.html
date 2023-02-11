@@ -16,7 +16,9 @@
       </header>
       <main class="content"><!--Контент-->
         <section class="profile"><!--Профиль-->
-          <img src="images/avatar.9d6adefb1210b21ebdf8.png" alt="Аватар" class="profile__avatar">
+          <div class="profile__avata-container">
+            <img src="images/avatar.9d6adefb1210b21ebdf8.png" alt="Аватар" class="profile__avatar">
+          </div>
           <div class="profile__info">
             <div class="profile__user">
               <h1 class="profile__name">Жак-Ив Кусто</h1>
@@ -34,13 +36,13 @@
       </footer>
       <section class="popup popup_type_edit"><!--Попап редакции-->
         <div class="popup__container">
-          <button class="popup__button-close popup__button-close_type_edit" type="button"><img class="popup__close-image" src="images/Close-Icon.2ceb783afbab75916ddc.svg" alt="Закрыть"></button>
+          <button class="popup__button-close" type="button"><img class="popup__close-image" src="images/Close-Icon.2ceb783afbab75916ddc.svg" alt="Закрыть"></button>
           <h2 class="popup__heading">Редактировать профиль</h2>
           <form action="submit" class="popup__form popup__form_type_edit" name="user">
             <fieldset class="popup__fieldset">
               <input type="text" class="popup__input popup__input_type_name" id="name-input" name="name" required value minlength="2" maxlength="40">
               <span class="popup__input-error name-input-error"></span>
-              <input type="text" class="popup__input popup__input_type_profession" id="profession-input" name="profession" required value minlength="2" maxlength="200">
+              <input type="text" class="popup__input popup__input_type_profession" id="profession-input" name="about" required value minlength="2" maxlength="200">
               <span class="popup__input-error profession-input-error"></span>
               <button class="popup__submit popup__submit_type_edit" type="submit">Сохранить</button>
             </fieldset>
@@ -49,12 +51,12 @@
       </section>
       <section class="popup popup_type_add"><!--Попап добавления-->
         <div class="popup__container">
-          <button class="popup__button-close popup__button-close_type_add" type="button"><img class="popup__close-image" src="images/Close-Icon.2ceb783afbab75916ddc.svg" alt="Закрыть"></button>
+          <button class="popup__button-close" type="button"><img class="popup__close-image" src="images/Close-Icon.2ceb783afbab75916ddc.svg" alt="Закрыть"></button>
           <h2 class="popup__heading">Новое Место</h2>
           <form action="submit" class="popup__form popup__form_type_add" name="card">
             <fieldset class="popup__fieldset">
-                <input type="text" class="popup__input popup__input_type_location" id="location-input" name="location" placeholder="Название" required value minlength="2" maxlength="30">
-                <span class="popup__input-error location-input-error"></span>
+                <input type="text" class="popup__input popup__input_type_location" id="name-input" name="name" placeholder="Название" required value minlength="2" maxlength="30">
+                <span class="popup__input-error name-input-error"></span>
                 <input type="url" class="popup__input popup__input_type_link" id="link-input" name="link" placeholder="Ссылка на картинку" required value>
                 <span class="popup__input-error link-input-error"></span>
               <button class="popup__submit popup__submit_type_add" type="submit">Создать</button>
@@ -62,10 +64,34 @@
           </form>
         </div>
       </section>
+      <section class="popup popup_type_avatar"><!--Попап редакции аватара-->
+        <div class="popup__container popup__container_type_avatar">
+          <button class="popup__button-close" type="button"><img class="popup__close-image" src="images/Close-Icon.2ceb783afbab75916ddc.svg" alt="Закрыть"></button>
+          <h2 class="popup__heading">Новое Место</h2>
+          <form action="submit" class="popup__form popup__form_type_avatar" name="avatar">
+            <fieldset class="popup__fieldset">
+                <input type="url" class="popup__input popup__input_type_url-avatar" id="url-avatar-input" name="link" placeholder="Название" required value>
+                <span class="popup__input-error url-avatar-input-error"></span>
+              <button class="popup__submit popup__submit_type_avatar" type="submit">Сохранить</button>
+            </fieldset>
+          </form>
+        </div>
+      </section>
+      <section class="popup popup_type_confirm"><!--Попап подтверждения-->
+        <div class="popup__container popup__container_type_confirm">
+          <button class="popup__button-close" type="button"><img class="popup__close-image" src="images/Close-Icon.2ceb783afbab75916ddc.svg" alt="Закрыть"></button>
+          <h2 class="popup__heading">Вы уверены?</h2>
+          <form action="submit" class="popup__form popup__form_type_confirm" name="confirm">
+            <fieldset class="popup__fieldset">
+              <button class="popup__submit popup__submit_type_confirm" type="submit">Да</button>
+            </fieldset>
+          </form>
+        </div>
+      </section>
       <section class="popup popup_type_image"><!--Popup фотографий-->
         <div class="popup__image-container">
-          <button class="popup__button-close popup__button-close_type_image" type="button"><img class="popup__close-image" src="images/Close-Icon.2ceb783afbab75916ddc.svg" alt="Закрыть"></button>
-          <img src="images/Домбай.0f5e9e2549b85685adc0.png" alt="Домбай" class="popup__image">
+          <button class="popup__button-close" type="button"><img class="popup__close-image" src="images/Close-Icon.2ceb783afbab75916ddc.svg" alt="Закрыть"></button>
+          <img src="" alt="" class="popup__image">
           <h2 class="popup__location"></h2>
         </div>
       </section>
@@ -75,7 +101,10 @@
           <img src="images/Домбай.0f5e9e2549b85685adc0.png" alt="Домбай" class="element__image">
           <div class="element__descriprion">
             <h2 class="element__heading"></h2>
-            <button class="element__like" type="button"></button>
+            <div class="element__like-section">
+              <button class="element__like" type="button"></button>
+              <p class="element__counter">0</p>
+            </div>
           </div>
         </div>
       </template>
