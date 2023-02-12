@@ -31,20 +31,21 @@ const createCard = (data) => {
     if (!card.isLike()) {
       api.putLikeCard(card.getId())
         .then((res) => {
+          card.refreshArrlike(res)
           card.setlikeCounter(res)
-          card.toggleLike();
+          card.toggleLike()
         })
         .catch((err) => { console.log(err) })
     } else {
       api.deleteLikeCard(card.getId())
         .then((res) => {
+          card.refreshArrlike(res)
           card.setlikeCounter(res)
-          card.toggleLike();
+          card.toggleLike()
         })
         .catch((err) => { console.log(err) })
     }
   }});
-  console.log(userInfo.getUserId())
   const cardElement = card.generateCard();
   return cardElement;
 }

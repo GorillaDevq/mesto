@@ -57,6 +57,10 @@ export default class Card {
     this._cardLike.classList.toggle(Card.selector.likeActive);
   }
 
+  refreshArrlike(data) {
+    this._arrLike = data.likes
+  }
+
   isLike() {
     return this._arrLike.some((item) => {
       return item._id === this._userId
